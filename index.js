@@ -30,12 +30,12 @@ const request = require('request');
 const dateFormat = require('dateformat');
 
 ////////////
-
+/*
 client.on("guildCreate", (guild) => {
        let channel = client.channels.get(guild.channels.filter(c => c.permissionsFor(client.user).has("SEND_MESSAGES") && c.type === "text").map(r => r.id)[0])    
        channel.send(`**قنــاتنا علـى اليوتيوب https://www.youtube.com/channel/UC_MsQabWHZKBXh4TvZenyTw**`)
 });
-
+*/
 
 
 
