@@ -31,10 +31,6 @@ const dateFormat = require('dateformat');
 
 ////////////
 
-client.on("guildCreate", (guild) => {
-       let channel = client.channels.get(guild.channels.filter(c => c.permissionsFor(client.user).has("SEND_MESSAGES") && c.type === "text").map(r => r.id)[0])    
-       channel.send(`**قنــاتنا علـى اليوتيوب https://www.youtube.com/channel/UC_MsQabWHZKBXh4TvZenyTw**`)
-});
 
 
 
@@ -63,7 +59,7 @@ client.on('message', message => {
 
 
 
-const prefix = "$"
+const prefix = ""
 const developers = ""
 
 
@@ -79,50 +75,50 @@ const developers = ""
         .setTitle('تــم أرسال فـي الخــاص')
      const embed = new Discord.RichEmbed()
          .setColor('#36393e')
-         .setTitle('ســيرفرنا حيــاك الله')
+         .setTitle('سيرفر X-1964')
          .setURL('https://discord.gg/HQ3hu3p')
          .setDescription(`
          \`\`\`Main Commands  :\`\`\`         
          
-         - ${prefix}bot : لاظهار معلومات البوت
+         - ${prefix}بوت : لاظهار معلومات البوت
          
-         - ${prefix}avatar : لاظهار صورتك
+         - ${prefix}صورتي : لاظهار صورتك
 		 
          - ${prefix}savatar : لاظهار صوره السيرفر
          
          - ${prefix}allbots : لاظهار جميع البوتات في السيرفر
          
-         - ${prefix}user : لاظهار معلومات حسابك
+         - ${prefix}يوزر : لاظهار معلومات حسابك
          
-         - ${prefix}server : لاظهار معلومات السيرفر
+         - ${prefix}سيرفر : لاظهار معلومات السيرفر
 
          - ${prefix}ping : لمعرفه سرعه اتصال البوت
 
-         - ${prefix}roles : لاظهار جميع رولات السيرفر
+         - ${prefix}#roles : لاظهار جميع رولات السيرفر
 
          \`\`\`Admin Commands :\`\`\` 
          
          \`Text Commands : \`
          
-         - ${prefix}ban : لتبنيد شخص
+         - ${prefix}بان : لتبنيد شخص
          
-         - ${prefix}kick : لطرد شخص
+         - ${prefix}كيك : لطرد شخص
          
          - ${prefix}bc : برودكاست رساله الى أعضاء السيرفر
          
-         - ${prefix}mute : أسكات
+         - ${prefix}اسكت : أسكات
          
-         - ${prefix}unmute : تكلم
+         - ${prefix}اتكلم : تكلم
          
-         - ${prefix}lock : قفل الشات
+         - ${prefix}اقفل : قفل الشات
          
-         - ${prefix}unlock : لفتح الشات
+         - ${prefix}افتح : لفتح الشات
 
          - ${prefix}hide : لاخفاء الشات
          
          - ${prefix}show : لاظهار الشات
          
-         - ${prefix}role : اعظاء رتبه لشخص
+         - ${prefix}رول : اعظاء رتبه لشخص
          
          - ${prefix}role all : اعطاء رتبه للكل
          
@@ -140,9 +136,9 @@ const developers = ""
 
          \`\`\`Credits Commands  :\`\`\`  
 
-        - ${prefix}credits : لمعرفه رصيدك
+        - ${prefix}رصيد : لمعرفه رصيدك
 
-        - ${prefix}daily : لسحب جائزه يوميه
+        - ${prefix}هديتي : لسحب جائزه يوميه
 
          لتحويل رصيد الى شخص
         - ${prefix}credits <المبلغ> <منشن للشخص> 
@@ -150,9 +146,8 @@ const developers = ""
 
 
 
-**رابط شرح كيفيه عمل البوت على قناتي في اليوتيوب**
-https://www.youtube.com/channel/UC_MsQabWHZKBXh4TvZenyTw
-
+**لينك سيرفرنا**
+https://discord.gg/65ntzN4
          
 `)
    message.channel.send(e).then(m => m.delete(5000))
@@ -244,7 +239,7 @@ client.on('message', message => {
            .addField('``My Prefix``' , `[ $ ]` , true)
            .addField('``My Language``' , `[ JavaScript ]` , true)
            .addField('``Bot Version``' , `[ v0.1 ]` , true)
-           .setFooter('By | <@Your Id>')
+           .setFooter('By | <@454828705630519326>')
   })
   }
   });
@@ -360,7 +355,7 @@ client.on("message", message => {
 
   let args = message.content.split(" ").slice(1);
 
-  if (command == "kick") {
+  if (command == "كيك") {
     if (message.author.bot) return;
     if (!message.channel.guild)
       return message.reply("** This command only for servers**");
@@ -402,7 +397,7 @@ client.on("message", message => {
 });
 
 
-///ban
+///بان
 client.on('message', message => {
   if (message.author.codes) return;
   if (!message.content.startsWith(prefix)) return;
@@ -455,10 +450,10 @@ client.on('message', message => {
    }
   });
 
-/// lock unlock
+/// اقفل افتح
 client.on('message', message => {
 
-  if(message.content === `${prefix}lock`) {
+  if(message.content === `${prefix}اقفل`) {
                       if(!message.channel.guild) return message.reply('** This command only for servers ❌ **');
 
 if(!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply(' ** You dont have `MANAGE_CHANNELS` permission **');
@@ -470,7 +465,7 @@ if(!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply(' ** Y
          });
            }
 
-if(message.content === `${prefix}unlock`) {
+if(message.content === `${prefix}افتح`) {
                    if(!message.channel.guild) return message.reply('** This command only for servers ❌ **');
 
 if(!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply('** You dont have `MANAGE_CHANNELS` permission **');
@@ -493,7 +488,7 @@ client.on("message", message => {
 
   let command = message.content.split(" ")[0];
 
-  if (command === prefix + "mute") {
+  if (command === prefix + "اسكت") {
     if (message.author.bot) return;
     if (!message.member.hasPermission("MANAGE_ROLES"))
       return message
@@ -545,7 +540,7 @@ client.on("message", message => {
         .addRole(muteRole)
         .then(() => {
           return message
-            .reply("**:white_check_mark: .. تم اعطاء العضو ميوت كتابي**")
+            .reply("**:white_check_mark: .. تم اعطاء العضو ميوت **")
             .catch(console.error);
         });
     }
@@ -562,7 +557,7 @@ client.on("message", message => {
   
    let command = message.content.split(" ")[0];
   
-   if (message.content.split(" ")[0].toLowerCase() === prefix + "unmute") {
+   if (message.content.split(" ")[0].toLowerCase() === prefix + "اتكلم") {
          if (!message.member.hasPermission('MANAGE_ROLES')) return;
    let user = message.mentions.users.first();
    let modlog = client.channels.find('name', 'log');
@@ -593,7 +588,7 @@ client.on("message", function(message) {
 
   var args = message.content.substring(prefix.length).split(" ");
   switch (args[0].toLocaleLowerCase()) {
-    case "clear":
+    case "مسح":
       message.delete();
       if (!message.channel.guild) return;
       if (message.member.hasPermission(0x2000)) {
@@ -640,7 +635,7 @@ client.on("message", function(message) {
 });
 
 //say embad
-
+/*
 client.on("message", message => {
   if (message.author.bot) return;
 
@@ -676,7 +671,7 @@ client.on("message", message => {
     message.delete();
   }
 });
-
+*/
 //role
 
 client.on("message", message => {
@@ -691,7 +686,7 @@ client.on("message", message => {
 var args = message.content.split(' ').slice(1);
 var msg = message.content.toLowerCase();
 if( !message.guild ) return;
-if( !msg.startsWith( prefix + 'role' ) ) return;
+if( !msg.startsWith( prefix + 'رول' ) ) return;
 if(!message.member.hasPermission('MANAGE_ROLES')) return message.channel.send(' **__ليس لديك صلاحيات__**');
 if( msg.toLowerCase().startsWith( prefix + 'roleembed' ) ){
     if( !args[0] ) return message.channel.sendEmbed(roleembed)
@@ -780,8 +775,8 @@ client.on('message',async message => {
   fs.writeFile(path, JSON.stringify(credits, null, 5), function(err) {if(err) console.log(err)});
  
  
-  if(message.content.startsWith(prefix + "credit")) {
-  if(args[0] !== `${prefix}credit` && args[0] !== `${prefix}credits`) return;
+  if(message.content.startsWith(prefix + "رصيد")) {
+  if(args[0] !== `${prefix}credit` && args[0] !== `${prefix}رصيد`) return;
  
   if(args[2]) {
     if(isNaN(args[2])) return message.channel.send('**:heavy_multiplication_x:| هذه الخانة يجب ان تتكون من ارقام وليس احرف.**');
@@ -817,7 +812,7 @@ client.on('message',async message => {
  
   }
   if(message.content.startsWith(prefix + "daily")) {
-    if(cool.includes(message.author.id)) return message.channel.send(`**:heavy_dollar_sign: | \ , يجب عليك انتظار  يوم لأخذ المبلغ مرة اخرى**`);
+    if(cool.includes(message.author.id)) return message.channel.send(`**:heavy_dollar_sign: | \ , يجب عليك استنا  يوم عشان تاخد المبلغ مرة اخرى**`);
     if(mentionn) {
       var one = Math.floor(Math.random() * 9) + 1;
       var two = Math.floor(Math.random() * 9) + 1;
